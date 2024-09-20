@@ -58,8 +58,8 @@ public class CardTrick {
 
 // hardcoded lucky card
 Card luckyCard = new Card();
-luckyCard.setValue(2); // Hardcoded value (e.g., 2)
-luckyCard.setSuit("Clubs"); // Hardcoded suit (e.g., Clubs)
+luckyCard.setValue(2); 
+luckyCard.setSuit("Clubs"); 
 
 
 boolean luckyFound = false;
