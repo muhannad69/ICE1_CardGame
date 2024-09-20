@@ -55,3 +55,24 @@ public class CardTrick {
         }
     }
 }
+
+// hardcoded lucky card
+Card luckyCard = new Card();
+luckyCard.setValue(2); // Hardcoded value (e.g., 2)
+luckyCard.setSuit("Clubs"); // Hardcoded suit (e.g., Clubs)
+
+
+boolean luckyFound = false;
+for (Card card : magicHand) {
+    if (card.getValue() == luckyCard.getValue() && card.getSuit().equals(luckyCard.getSuit())) {
+        luckyFound = true;
+        break;
+    }
+}
+
+if (luckyFound) {
+    System.out.println("Lucky card found! It's a match.");
+} else {
+    System.out.println("Lucky card not found.");
+}
+
