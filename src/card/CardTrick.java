@@ -5,6 +5,7 @@
 package card;
 import java.util.Random;
 import java.util.Scanner;
+
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
  * and then asks the user to pick a card and searches the array of cards
@@ -53,26 +54,28 @@ public class CardTrick {
         } else {
             System.out.println("Sorry, your card is not in the magic hand.");
         }
+        
+        // hardcoded lucky card
+        Card luckyCard = new Card();
+        luckyCard.setValue(2); 
+        luckyCard.setSuit("Clubs"); 
+
+
+        boolean luckyFound = false;
+        for (Card card : magicHand) {
+            if (card.getValue() == luckyCard.getValue() && card.getSuit().equals(luckyCard.getSuit())) {
+                luckyFound = true;
+                break;
+            }
+        }
+
+        if (luckyFound) {
+            System.out.println("Lucky card found! It's a match.");
+        } else {
+            System.out.println("Lucky card not found.");
+        }
     }
 }
 
-// hardcoded lucky card
-Card luckyCard = new Card();
-luckyCard.setValue(2); 
-luckyCard.setSuit("Clubs"); 
 
-
-boolean luckyFound = false;
-for (Card card : magicHand) {
-    if (card.getValue() == luckyCard.getValue() && card.getSuit().equals(luckyCard.getSuit())) {
-        luckyFound = true;
-        break;
-    }
-}
-
-if (luckyFound) {
-    System.out.println("Lucky card found! It's a match.");
-} else {
-    System.out.println("Lucky card not found.");
-}
 
